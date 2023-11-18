@@ -7,7 +7,7 @@ const Game = require('../models/Game.model');
 
 
 
-// POST ROUTE that Creates a new game
+// POST ROUTE that Creates a new folder
 
 router.post('/add-game', async (req,res)=>{
     const {title, thumbnail, short_description, game_url, genre, platform, publisher, developer, release_date, freetogame_profile_url} = req.body;
