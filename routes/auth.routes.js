@@ -130,4 +130,20 @@ router.get("/verify", isAuthenticated, (req, res, next) => {
   res.status(200).json(req.payload);
 });
 
+router.delete("/profile/:userId", async (req, res) => {
+  const { userId } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(userId)) {
+    res.status(400).json({ message: "Specified Id is not valid" });
+    return;
+  }
+
+  try {
+    await User.findByIdAndRemove(userId);
+    res.json({ message: `User with ${userId} is removed.` });
+  } catch (error) {
+    res.json(error);
+  }
+});
+
 module.exports = router;
