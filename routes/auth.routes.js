@@ -110,7 +110,7 @@ router.post("/login", (req, res, next) => {
           `${process.env.JWT_SECRET_KEY}`,
           {
             algorithm: "HS256",
-            expiresIn: ß"6h",
+            expiresIn: "6h",
           }
         );
 
