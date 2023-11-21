@@ -1,7 +1,7 @@
 const { expressjwt: jwt } = require("express-jwt");
 
 const isAuthenticated = jwt({
-  secret: process.env.TOKEN_SECRET,
+  secret: "qwertyuhgfds123",
   algorithms: ["HS256"],
   requestProperty: "payload",
   getToken: getTokenFromHeaders,
